@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stateswitch/state_switch.dart';
+import 'package:stateswitch/state_switch_asset.dart';
+import 'package:stateswitch/state_switch_network.dart';
 import 'package:stateswitch/state_switch_root_bundle.dart';
+import 'package:stateswitch/toggle_state_switch_root_asset.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,10 +103,18 @@ class _MyHomePageState extends State<MyHomePage> {
               'Network switch changes when clicking (+) $_counter:',
             ),
             OnOffAnimation(switchOn: _counter % 2 == 1),
+            Text(
+              'Asset switch changes when clicking (+) $_counter:',
+            ),
+            OnOffAnimationAsset(switchOn: _counter % 2 == 1),
             const Text(
               'Root bundle switch changes when tapped on:',
             ),
             const StateSwitchRootBundle(),
+            const Text(
+              '.Asset switch changes when tapped on:',
+            ),
+            const StateSwitchAsset(),
           ],
         ),
       ),
