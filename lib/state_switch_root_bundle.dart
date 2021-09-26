@@ -44,8 +44,10 @@ class _StateSwitchRootBundleState extends State<StateSwitchRootBundle> {
   void _onStateChange(String stateMachineName, String stateName) {
     if (stateName == 'Off' && _setDarkTrigger?.value == true) {
       print('turn to dark side');
+      isDarkTheme = true;
     } else if (stateName == 'Idle_on' && _setDarkTrigger?.value == false) {
       print('switch to light side');
+      isDarkTheme = false;
     }
   }
 
